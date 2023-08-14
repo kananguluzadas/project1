@@ -26,18 +26,10 @@ $dark:#212529;
 
 // mixin
 @mixin left-side{
-    width:416px;
-    height:299px;
+    width: 26rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap:25px
-}
-
-@mixin ss{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 @mixin h4-special{
@@ -54,8 +46,6 @@ $dark:#212529;
     font-weight: 700;
     line-height: 50px;
     letter-spacing: 0px;
-    margin-top: -10px;
-    margin-bottom: 12px;
 }
 
 @mixin ss-p{
@@ -79,8 +69,6 @@ $dark:#212529;
 
 @mixin ll{
             text-align: left;
-            .section-span{
-                @include ss();
                 h2{
                     font-size: 40px;
                     @include ss-h2()
@@ -90,7 +78,7 @@ $dark:#212529;
                     font-size: 15px;
                     @include ss-p()
                 }
-            }
+            
             .btn{
                 font-size: 20px;
                 @include btn()
@@ -99,21 +87,17 @@ $dark:#212529;
 
 
 
+// 1440x900
 // header
 
 header{
-    width: 1440px;
-    height:586px;
-    padding-top:35px;
     background-color:$green-color; 
-    nav{
-        margin: 0 131px;
-        height:50px;
-        width:1175px;
+    padding: 2.1875rem 7.875rem 3.75rem 7.875rem;  
+    nav{  
         display:flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        margin: 0 .3125rem;
         ul{
             display:flex;
             gap:30px;
@@ -131,35 +115,40 @@ header{
             display: none;      
         }
     }
+    // 1180.28x378.13
     #welcome-section{
         display: flex;
         justify-content: space-between;
-        width: 1180.28px;
-        height: 378.13px;
-        margin-left: 126px;
-        margin-top: 40px;
+        margin-top: 2.5rem;
         align-items: center;
+        gap: 7.5rem;
         .left-side{
             @include left-side();
             @include ll();
             color: #ffffff;
-            .section-h{
-                @include h4-special();
-               color:#ffffff;
-            }         
+            gap: 25px;
+            .welcome-hug{
+                display: flex;
+                flex-direction: column;
+                gap:15px;
+                .section-h{
+                    @include h4-special();
+                    color:#ffffff;
+                }  
+                p{
+                    padding-right: 10px;
+                }
+            }       
         }
     }
 }
 
 main{
     .container{
-        padding: 0 126px;
+        padding: 3.75rem 7.875rem 0 7.875rem;
     // partners
     #partners{
-    width: 1158.98px;
-    height: 370px;
-    margin-top: 60px;
-    margin-left: 11px;
+    margin-left: .6875rem;
     gap: 55px;     
     color:$dark;
     text-align: center;
@@ -167,15 +156,18 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 11px;
     .partners-hug{
         display: flex;
         flex-direction: column;
         gap:20px;
+        width: 29vw;
         .section-h{
             @include h4-special();
             color:$green-color;
+            gap: 15px;
         }
-        .section-span{
+        
             h2{
                 font-size: 40px;
                 @include ss-h2();
@@ -183,18 +175,15 @@ main{
             p{
                 font-size: 20px;
                 line-height: 35px;
-                width: 404px;
-                height: 60px;
                 @include ss-p();
             }
-        }
     } 
     #four-to-5{
-        height: 60px;
-        width: 1158.98px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4rem;
     }
     .btn{
         background-color: $dark;
@@ -207,14 +196,19 @@ main{
     // LOREMS
     .lorem{
         display:flex;
-        margin-top: 73px;
-        width: 1180px;
-        height: 431px;
+        margin-top: 4.5625rem;
         justify-content: space-between;
         align-items: center;
         .right-side{
             @include left-side();
             @include ll();
+            width: 29.375rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.875rem;
+            p{
+                margin-top: -10px;
+            }
             .btn{
                 color: #ffffff;
                 background-color: $dark;
@@ -222,15 +216,19 @@ main{
         }
     }
     .lorem2{
-        margin-top: 73.57px;
+        margin-top: 5.2231rem;
         display: flex;
         justify-content: space-between;
-        width: 1180px;
-        height: 565.73px;
         align-items: center;
         .left-side{
             @include ll();
             @include left-side();
+            display: flex;
+            flex-direction: column;
+            gap: 1.875rem;
+            p{
+                margin-top: -10px;
+            }
             .btn{
                 color: #ffffff;
                 background-color: $dark;
@@ -238,19 +236,17 @@ main{
         }
     }
     #team{
-        width: 1176px;
-        height: 599px;
-        margin-top: 102.27px;
+        margin-top: 6.3919rem;
         display: flex;
         flex-direction: column;
-        gap: 45px;
+        gap: 2.8125rem;
         margin-left: 2px;
         justify-content: center;
         align-items: center;
        .team-hug{
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 16px;
         text-align: center;
             .section-h{
                 @include h4-special();
@@ -262,11 +258,10 @@ main{
                     @include ss-h2();
             }
             :nth-child(3){
-               margin-top: -20px;    
+                width: 404px;
                 font-size: 20px;
                 line-height: 35px;
                 height: 60px;
-                padding: 0 350px;
                 @include ss-p();
             }
             :nth-child(4){
@@ -278,20 +273,19 @@ main{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 47px;
+        flex-wrap: wrap;
+        gap: 2.9375rem;
         .cards{
-            width: 279px;
-            height: 299px;
             box-shadow: 0 3px 10px -5px #000000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 19px;
+            padding: 20px 38px;
             img{
                 margin: 0 auto;
             }
             figcaption{
-                margin-left: 38px;
                 //styleName: Typography / Heading / Bold 4;
                 font-family: Crimson Text;
                 font-size: 24px;
@@ -299,10 +293,8 @@ main{
                 line-height: 30px;
                 letter-spacing: 0px;
                 text-align: left;
-
             }
             span{
-                margin-left: 38px;
                 //styleName: Typography/Body/Regular;
                 font-family: Work Sans;
                 font-size: 15px;
@@ -324,17 +316,14 @@ main{
 }
 }
 footer{
-    margin-top: 54px;
-    width: 1440px;
-    height: 125px;
+    margin-top: 3.375rem;
+    padding: 3.4375rem 7.9375rem;
     background-color: $green-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 131px;
     .footer-r{
         p{
-            //styleName: Typography/Sub-Heading/Regular;
         font-family: Work Sans;
         font-size: 20px;
         font-weight: 400;
@@ -349,272 +338,341 @@ footer{
 
 
 // media part
-@mixin mleft-side{
-    width:335px;
-    height:288px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap:25px
-}
-
-@mixin mss{
-    width: 335px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@mixin mh4-special{
-    font-family: Work Sans;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-@mixin mss-h2{
-    font-family: Crimson Text;
-    font-weight: 700;
-    line-height: 35px;
-    letter-spacing: 0px;
-}
-
-@mixin mss-p{
-    font-family: Work Sans;
-    font-weight: 400;
-    letter-spacing: 0px;
-    opacity: 0.75;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@mixin mbtn{
-    width:170px;
-    height:48px;
-    font-family: Work Sans;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0px;
-    text-align: center;
-    border: transparent;
-    border-radius: 3.5px;
-    margin-top: -10px;
-}
-
-@mixin mll{
-            text-align: left;
-            .section-span{
-                @include mss();
-                h2{
-                    
-                    font-size: 28px;
-                    @include mss-h2()
-                }
-                p{
-                    line-height: 19px;
-                    font-size: 15px;
-                    height: 95px;
-                    @include mss-p()
-                }
-            }
-            .btn{
-                font-size: 20px;
-                @include mbtn()
-            }
-}
 
 
-@media only screen and (max-width:375px){
+@media only screen and (max-width:1095px) {
     header{
-        width: 100%;
-        height: 642px;
-        nav{
+        #welcome-section{
             display: flex;
-            justify-content: space-between;
-            width: 335px;
-            height: 38px;
-            margin-left: 20px;
+            flex-direction: column;
+            gap: 60px;
+            .left-side{
+                width: auto;
+                text-align: center;
+                .btn{
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1049px) {
+    main{
+        .container{
+            #partners{
+                .partners-hug{
+                    width: 50vw;
+                }
+            }
+            .lorem{
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                .right-side{
+                    width: auto;
+                    text-align: center;
+                    .btn{
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .lorem2{
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 60px;
+                .left-side{
+                    width: auto;
+                    text-align: center;
+                    .btn{
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:881px){
+    header{
+        padding: 2rem 5rem 1.8rem 5rem;
+        nav{
             ul{
                 display: none;
             }
-            img{
-                width:129px;
-                height: 38px;
-            }
             #hamburger{
-                    width: 35px;
-                    display: block;
-                
+                display: block;
             }
         }
-        #welcome-section{
-            width: 335px;
-            height: 514.61px;
-            margin-top: 7px;
-            margin-left: 20px;
-            gap: 30px;
-            display:flex;
-            flex-direction: column-reverse;
-            .left-side{
-                @include mleft-side();
-                @include mll();
+    }
+}
+
+@media only screen and (max-width:804px){
+    main{
+        .container{
+            #team{
+                #to-5{
+                    align-items: center;
+                    justify-content: center;
+                }
             }
+        }
+    }    
+}
+
+
+@media only screen and (max-width:685px) {
+main{
+    .container{
+        #partners{
+            #four-to-5{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+            }  
+        }
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+    
+}
+
+@media only screen and (max-width:646px) {
+   header{
+    #welcome-section{
+        .right-side{
+            img{
+                width: 416px;
+                object-fit: cover;
+            }
+        }
+        
+    }
+   }
+
+   main{
+    .container{
+        .lorem{
+            .left-side{
+                img{
+                    width: 387px;
+                }
+            }
+        }
+        .lorem2{
             .right-side{
                 img{
-                    width:335px;
-                    height: 196.61px;
+                    width: 387px;
+                }
+            }
+        }
+    }
+   }
+               
+}
+
+@media only screen and (max-width:606px) {
+    header{
+        padding: 2rem 3.5rem 1.8rem 3.5rem;
+    }
+    footer{
+        padding: 2rem 3.5rem 1.8rem 3.5rem;
+    }
+}
+
+@media only screen and (max-width:579px){
+    footer{
+        .footer-r{
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:490px) {
+    header{
+        padding: 1.875rem 2.5rem;
+    }
+    main{
+        .container{
+            padding: 1.875rem 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width:421px) {
+    header{
+        #welcome-section{
+            .right-side{
+                img{
+                    width: 341px;
+                    object-fit: cover;
                 }
             }
         }
     }
 
     main{
-        width: 375px;
-        height: 3558px;
         .container{
-            padding: 0 20px;
-        #partners{
-            margin-top: 5px;
-            height: 711.45px;
-            width:335px;
-            display: flex;
-            flex-direction: column;
-            gap: 55px;
-            align-items: center;
-            margin-left: 0px;
-            .partners-hug{
-                display: flex;
-                flex-direction: column;
-                gap:20px;
-               
-                .section-span{
-                    h2{
-                        font-size: 24px;
-                        @include mss-h2();
-                    }
-                    p{
-                        width: 335px;
-                        line-height: 25px;
-                        @include mss-p();
+            #partners{
+                .partners-hug{
+                    width: 300px;
+                }
+            }
+            .lorem{
+                .left-side{
+                    img{
+                        width: 357px;
                     }
                 }
             }
-
-            #four-to-5{
-                width: 200px;
-                height: 386.45px;
-                display: flex;
-                flex-direction: column;
+            .lorem2{
+                .right-side{
+                    img{
+                        width: 357px;
+                    }
+                }
+            }
+            #team{
+                margin-top: 70px;
+                .team-hug{
+                    :nth-child(3){
+                        width: 300px;
+                        margin-bottom: 20px;
+                    }
+                }
             }
         }
+       }
+}
 
-        // lorems
-        .lorem{
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            width: 335px;
-            height: 513.88px;
-            gap: 30px;
-            margin-left: 0px;
-            .left-side{
-                img{
-                    width: 335px;
-                    height: 240.88px;
-                }
+@media only screen and (max-width:390px) {
+    header{
+        padding: 20px;
+        nav{
+            img{
+                width: 129px;
             }
-            .right-side{
-               
-                .section-span{
-                    h2{
-                        width: 334px;
-                        font-size: 24px;
-                    }
-                    p{
-                        font-size: 15px;
-                    }
-                }
-                @include mleft-side();
-                @include mll();
+            #hamburger{
+                width: 35px;
             }
         }
-
-        .lorem2{
-            margin-top: 45px;
-            width: 335px;
-            height: 580.87px;
+        #welcome-section{
             display: flex;
             flex-direction: column-reverse;
-            gap: 30px;
-            margin-left: 0px;
+            gap: 2rem;
             .left-side{
-
-                @include mleft-side();
-                @include mll();
-            }
-            .right-side{
-                img{
-                    width: 335px;
-                    height: 315.87px;
+                text-align: left;
+                .welcome-hug{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    h2{
+                        font-size: 28px;
+                    }
+                    
                 }
-            }
-        }
-
-        #team{
-            width: 100%;
-            margin-top: 520px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 35px;
-            margin-left: 0px;
-            position: relative;
-            .team-hug{
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-                height: 167px;
-                h2{
-                    font-size: 24px;
+                .btn{
+                    margin: 0;
                 }
-                :nth-child(4){
-                    display: block;
-                    width: 277px;
-                    height: 85px;
-                    margin-top: -20px;
-                    text-align: center;
-                    @include ss-p();
-                    font-size: 20px;
-                    line-height: 30px;
-                }
-                :nth-child(3){
-                    display: none;
-                }
-            }
-            #to-5{
-                display: flex;
-                width: 279px;
-                height: 1301px;
-                flex-direction: column;
-                gap: 35px;
-            }
-            .btn{
-                position: absolute;
-                bottom: -90%;
-                z-index: 2;
             }
         }
     }
+
+    main{
+        .container{
+            padding: 20px;
+            #partners{
+                .partners-hug{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    gap: 5px;
+                    h2{
+                        font-size: 24px;
+                    }
+                    p{
+                        text-align: center;
+                        
+                    }
+                }
+            }
+
+            .lorem{
+                margin-top: 3.5rem;
+                gap: 15px;
+                .right-side{
+                    text-align: left;
+                    gap: 20px;
+                    h2{
+                        font-size: 24px;
+                        line-height: 35px;
+                    }
+                    .btn{
+                        margin: 0;
+                    }
+                }
+            }
+
+            .lorem2{
+                margin-top: 3.5rem;
+                gap: 20px;
+                .left-side{
+                    text-align: left;
+                    gap: 20px;
+                    h2{
+                        font-size: 24px;
+                        line-height: 35px;
+                    }
+                    .btn{
+                        margin: 0;
+                    }
+                }
+            }
+
+            #team{
+                margin-top: 3.2rem;
+                .team-hug{
+                    gap: 10px;
+                    h2{
+                        font-size: 24px;
+                    }
+                    :nth-child(3){
+                        display: none;
+                    }
+                    :nth-child(4){
+                        display: block;
+                        font-family: Work Sans;
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 35px;
+                        letter-spacing: 0px;
+                        text-align: center;
+                    }
+                }
+                #to-5{
+                    .cards{
+                        width: 279px;
+                        height: 299px;
+                    }
+                }
+            }
+        }
     }
 
     footer{
-        width: 375px;
+        padding: 36px 25px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         gap: 20px;
         .footer-r{
             width: 326px;
